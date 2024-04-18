@@ -1,0 +1,72 @@
+:root {
+    --font1: 'Inter', sans-serif;
+    --font2: 'Merriweather', serif;
+    --black1: rgb(17,17,17);
+    --white1: rgb(243,243,243);
+    --grey1: rgb(209,209,209);
+    --grey2: rgb(233,233,233);
+    --grey3: rgb(105,105,105);
+  }
+
+  *{
+    margin: 0;
+    overflow: 0;
+    box-sizing: border-box;
+  }
+
+@mixin title {
+            font-family: var(--font1);
+            letter-spacing: 2px;
+            text-transform: uppercase;  
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+li{
+    list-style: none;
+}
+
+a,
+a:visited{
+    color: var(--white1);
+}
+
+body{
+    background: url(/images/bg.jpg) fixed center/cover;
+    text-align: center;
+    font-family: var(--font2);
+    max-width: 1300px;
+    margin: 0 auto;
+
+    &:before{
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: var(--black1);
+        animation: animBefore 1.5s ease forwards;
+        animation-delay: 0.15s;
+       
+        @keyframes animBefore {
+            to {
+                opacity: 0;
+            }
+        }
+    }
+
+    .btn{
+        background: none;
+        border: 2px solid var(--black1);
+        height: 45px;
+        width: 170px;
+        font-size: 0.75rem;
+        cursor: pointer;
+        @include title;
+    }
+
+    
+}
